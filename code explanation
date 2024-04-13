@@ -1,0 +1,35 @@
+1. Importing Libraries:
+
+numpy (np): Used for numerical computations and array manipulation.
+matplotlib.pyplot (plt): Used for creating visualizations like plots and images.
+  
+2. mandelbort Function:
+
+This function takes a complex number c and the maximum number of iterations (max_iter) as input.
+It iterates through a loop, applying the Mandelbrot formula z = z * z + c to z starting from 0.
+If the absolute value of z ever exceeds 2.0, it indicates divergence and the function returns the number of iterations needed to reach that point.
+If the loop completes max_iter times without exceeding the threshold, the function returns max_iter, signifying membership in the Mandelbrot set.
+  
+3. mandelbrot_set Function:
+
+This function generates a representation of the Mandelbrot set for a specific region.
+It takes various parameters:
+minx, maxx: Minimum and maximum values for the real part of complex numbers.
+miny, maxy: Minimum and maximum values for the imaginary part of complex numbers.
+width, height: Dimensions (number of pixels) of the output image.
+max_iter: Maximum number of iterations for the mandelbort function.
+It creates NumPy arrays (x and y) representing coordinates within the specified region.
+It initializes a NumPy array (mset) to store the number of iterations for each complex number in the set.
+It iterates through each pixel (represented by i and j coordinates) in the output image.
+For each pixel, it constructs a complex number c using the corresponding coordinates from x and y.
+It calls the mandelbort function to determine the number of iterations needed for c.
+The iteration count is stored in the corresponding position of the mset array.
+Finally, the function returns the mset array containing the iteration counts for all complex numbers in the defined region.
+  
+4. Generating and Visualizing the Mandelbrot Set:
+
+The code sets parameters for the desired view of the Mandelbrot set.
+It calls the mandelbrot_set function to compute the iteration counts for each pixel.
+The resulting mandelbort_image array is used with plt.imshow to create a visual representation.
+Additional customizations are applied using plt functions to set labels, colormap, and display the plot with the title "MANDLEBROT".
+This code effectively demonstrates how to calculate and visualize the Mandelbrot set using Python libraries like NumPy and Matplotlib.
