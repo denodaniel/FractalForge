@@ -4,9 +4,9 @@ import matplotlib.pyplot as plt
 def mandelbort(c, max_iter ):
     z = 0
     for n in range (max_iter):
-        if abs(z) > 2:
+        if abs(z) > 2:   # absolute valuse is taken 
             return n
-        z = z*z + c
+        z = z*z + c  # mandelbrot formula
     return max_iter
  
 def mandelbrot_set(minx, maxx, miny, maxy, width, height, max_iter):
